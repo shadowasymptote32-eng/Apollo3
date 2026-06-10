@@ -1,11 +1,18 @@
 class Engine:
-    def __init__(self, registry):
-        self.registry = registry
+    def __init__(self):
+        self.capabilities = {}
+        self.graph = {}
 
-    def run(self, intent, *args, **kwargs):
-        cap = self.registry.resolve(intent)
+    def register(self, name, fn):
+        self.capabilities[name] = fn
 
-        if cap is None:
-            raise Exception(f"No capability for intent: {intent}")
+    def execute(self, intent: str):
+        if ":" in intent:
+            cap, payload = intent.split(":", 1)
+        else:
+            cap, payload = "echo", intent
 
-        return cap.run(*args, **kwargs)
+        if cap not in self.capabilities:
+            return f"[ERR] missing capability: {cap}"
+
+        return self.capabilities[cap](payload)

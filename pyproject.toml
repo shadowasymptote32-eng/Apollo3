@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apollo3"
+version = "0.1.0"
+description = "Apollo3 capability runtime shell"
+
+[tool.setuptools]
+packages = ["apollo3"]

@@ -1,11 +1,5 @@
 from apollo3.runtime.engine import Engine
-from apollo3.registry.registry import Registry
-from apollo3.core.capability import Capability
+from apollo3.registry.registry import build
 
-registry = Registry()
-
-registry.register("hello", Capability("hello", lambda x: f"Hello {x}"))
-
-engine = Engine(registry)
-
-print(engine.run("hello", "APOLLO3"))
+engine = build(Engine())
+print(engine.execute("echo:demo"))
