@@ -1,11 +1,8 @@
+[project]
+name = "apollo3"
+version = "0.1.0"
+requires-python = ">=3.10"
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
-
-[project]
-name = "apollo3"
-version = "0.5.0"
-description = "Apollo3 Distributed Cognitive Runtime"
-
-[tool.setuptools]
-packages = ["apollo3"]

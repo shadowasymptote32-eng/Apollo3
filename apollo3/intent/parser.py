@@ -1,10 +1,7 @@
-def parse(text):
-    t = text.lower()
-
-    if "hello" in t:
-        return "echo:hello"
-
-    if "status" in t:
-        return "echo:system_status"
-
-    return f"echo:{text}"
+class IntentParser:
+    def parse(self, text: str):
+        parts = text.strip().split()
+        return {
+            "action": parts[0] if parts else None,
+            "target": " ".join(parts[1:]) if len(parts) > 1 else None
+        }
