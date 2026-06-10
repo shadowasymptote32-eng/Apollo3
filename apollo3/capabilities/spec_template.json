@@ -1,0 +1,7 @@
+{
+  "name": "example",
+  "inputs": ["any"],
+  "output": "any",
+  "deterministic": true,
+  "version": "0.1"
+}
