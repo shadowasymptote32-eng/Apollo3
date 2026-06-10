@@ -1,10 +1,10 @@
-def parse(text: str):
-    text = text.lower().strip()
+def parse(text):
+    t = text.lower()
 
-    if "hello" in text:
+    if "hello" in t:
         return "echo:hello"
 
-    if "run" in text:
-        return "echo:running"
+    if "status" in t:
+        return "echo:system_status"
 
     return f"echo:{text}"
